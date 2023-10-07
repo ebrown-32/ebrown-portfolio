@@ -9,6 +9,14 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+body.dark-mode {
+  font-family: "Poppins", sans-serif;
+  background-color: #333;
+  color: #fff;
 }
 
 html {
@@ -19,6 +27,9 @@ p {
   color: rgb(85, 85, 85);
 }
 
+body.dark-mode p {
+  color: rgb(0, 0, 0);
+}
 /* TRANSITION */
 
 a,
@@ -162,6 +173,15 @@ section {
 
 /* PROFILE SECTION */
 
+.circular-image {
+  border-radius: 50%; /* This makes the image round */
+  width: 400px;      /* Adjust to desired size */
+  height: 400px;     /* Adjust to desired size */
+  display: block;    /* This helps in certain cases to ensure the full circle effect */
+  object-fit: cover; /* In case the image isn't already a square, this ensures it covers the full circle */
+}
+
+
 #profile {
   display: flex;
   justify-content: center;
@@ -173,7 +193,7 @@ section {
   display: flex;
   height: 400px;
   width: 400px;
-  margin: auto 0;
+  margin: auto 0 auto 10px;
 }
 
 .section__text {
@@ -197,6 +217,16 @@ section {
 .title {
   font-size: 3rem;
   text-align: center;
+  opacity: 0;
+  transform: translateX(-100%); /* Off the screen to the left */
+  transition: opacity 0.5s, transform 0.5s; /* smooth transition for the effects */
+}
+
+.title.visible {
+  font-size: 3rem;
+  text-align: center;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 #socials-container {
