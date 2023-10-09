@@ -5,17 +5,50 @@ function toggleMenu() {
   icon.classList.toggle("open");
 }
 
-const themeToggleButton = document.getElementById('theme-toggle');
+const themeToggleContainer = document.getElementById('theme-toggle');
+const lightIcon = document.getElementById('light-icon');
+const darkIcon = document.getElementById('dark-icon');
+const sunAnimation = document.getElementById('sun-animation');
+const moonAnimation = document.getElementById('moon-animation');
 
-themeToggleButton.addEventListener('click', () => {
+themeToggleContainer.addEventListener('click', () => {
     const body = document.body;
 
-    if (body.classList.contains('dark-mode')) {
-        body.classList.remove('dark-mode');
+    if (body.classList.contains('light-mode')) {
+        body.classList.remove('light-mode');
+        lightIcon.style.display = 'inline-block';
+        darkIcon.style.display = 'none';
+
+        // Moon animation
+        moonAnimation.style.bottom = '70%';
+        moonAnimation.style.opacity = '1';
+        setTimeout(() => {
+            moonAnimation.style.opacity = '0';
+        }, 1000); // Fade out after 1 second
+
     } else {
-        body.classList.add('dark-mode');
+        body.classList.add('light-mode');
+        lightIcon.style.display = 'none';
+        darkIcon.style.display = 'inline-block';
+
+        // Sun animation
+        sunAnimation.style.bottom = '70%';
+        sunAnimation.style.opacity = '1';
+        setTimeout(() => {
+            sunAnimation.style.opacity = '0';
+        }, 1000); // Fade out after 1 second
     }
+
+    // Reset position after animation ends
+    setTimeout(() => {
+        sunAnimation.style.bottom = '-10%';
+        moonAnimation.style.bottom = '-10%';
+    }, 2000); // Reset after 2 seconds
 });
+
+
+
+
 
 document.addEventListener('DOMContentLoaded', function() {
   let options = {

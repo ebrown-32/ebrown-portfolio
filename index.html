@@ -7,11 +7,33 @@
     <title>Eli Brown</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="mediaqueries.css" />
+
   </head>
   <body>
     <nav id="desktop-nav">
       <div class="logo">Eli Brown</div>
-      <button id="theme-toggle">Toggle Dark/Light Mode</button>
+      <span id="theme-toggle">
+        <span id="light-icon" role="button" tabindex="0" aria-label="Switch to light mode">
+            <iconify-icon icon="material-symbols:light-mode-outline" width="24" height="24"></iconify-icon>
+        </span>
+        <span id="dark-icon" style="display:none;" role="button" tabindex="0" aria-label="Switch to dark mode">
+            <iconify-icon icon="iconamoon:mode-dark-light" width="24" height="24"></iconify-icon>
+        </span>
+    </span>
+    
+    <!-- Animation elements -->
+    <div id="sun-animation" class="animation-icon" style="opacity:0; bottom: -10%;">
+        <iconify-icon icon="material-symbols:light-mode-outline" width="128" height="128"></iconify-icon>
+    </div>
+    <div id="moon-animation" class="animation-icon" style="opacity:0; bottom: -10%;">
+        <iconify-icon icon="iconamoon:mode-dark-light" width="128" height="128"></iconify-icon>
+    </div>
+    
+    
+    
+    
+
+    
       <div>
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
@@ -47,7 +69,7 @@
         <p class="section__text__p2"></p>
         <div class="btn-container">
           <button
-            class="btn btn-color-2"
+            class="btn btn-color-1"
             onclick="window.open('./assets/ebrownfall2023resume.pdf')"
           >
             Resume
@@ -57,23 +79,20 @@
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/ebrown03/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/ebrown-32'"
-          />
+          <iconify-icon icon="devicon:linkedin" width="24" height="24"
+          alt="My LinkedIn"
+          onclick="location.href='https://www.linkedin.com/in/ebrown03/'"
+          class="icon"
+          ></iconify-icon>
+          <iconify-icon icon="eva:github-fill" width="24" height="24"
+          alt="My Github profile"
+          class="icon"
+          onclick="location.href='https://github.com/ebrown-32'"
+          ></iconify-icon>
         </div>
       </div>
     </section>
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
         <div class="section__pic-container">
@@ -357,7 +376,7 @@
             alt="Email icon"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+          <p><a href="mailto:examplemail@gmail.com">elibrown03@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
           <img
@@ -384,6 +403,7 @@
     </footer>
     <script src="script.js"></script>
     <!-- Scripts -->
+      <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

@@ -7,16 +7,25 @@
   padding: 0;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  color: #333;
+.animation-icon {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: bottom 1s, opacity 1s;
+  pointer-events: none; /* to ensure the icons won't block any interaction */
+  z-index: 10; /* to ensure the icons appear above other content */
 }
 
-body.dark-mode {
+body {
   font-family: "Poppins", sans-serif;
-  background-color: #333;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+body.light-mode {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 html {
@@ -24,10 +33,10 @@ html {
 }
 
 p {
-  color: rgb(85, 85, 85);
+  color: rgb(0, 0, 0);
 }
 
-body.dark-mode p {
+body.light-mode p {
   color: rgb(0, 0, 0);
 }
 /* TRANSITION */
@@ -55,6 +64,22 @@ nav {
   list-style: none;
   font-size: 1.5rem;
 }
+
+.nav-links li a {
+  color: white;
+}
+
+/* Light mode styles */
+.light-mode .nav-links li a {
+  color: black;
+}
+
+
+/* Optional: Change the color on hover for better UX */
+.nav-links li a:hover {
+  color: #ddd;  /* You can adjust this to any desired color */
+}
+
 
 a {
   color: black;
@@ -206,6 +231,12 @@ section {
 }
 
 .section__text__p1 {
+  color: white;
+  text-align: center;
+}
+
+.light-mode .section__text__p1 {
+  color: black;
   text-align: center;
 }
 
@@ -293,6 +324,81 @@ section {
 
 /* ABOUT SECTION */
 
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 0;  /* Increased padding for a longer visible timeline */
+  list-style-type: none;
+  
+  &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 2px;
+      height: 100%;
+      background-color: #ddd;
+      z-index: 1;
+  }
+}
+
+.event {
+  position: relative;
+  padding: 100px 0;  /* Increased padding for spacing between events */
+}
+
+.event .dot {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background: #3498db;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.event .content {
+  width: 45%; 
+  padding: 10px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.event.left .content {
+  float: left;
+  margin-right: 30px; /* Increased margin for positioning dots */
+}
+
+.event.right .content {
+  float: right;
+  margin-left: 30px; /* Increased margin for positioning dots */
+}
+
+/* Adjust dot placement for each event */
+.event.left .dot {
+  left: 50%;  /* Adjust this value if needed */
+}
+
+.event.right .dot {
+  left: 50%;  /* Adjust this value if needed */
+}
+
+@media (max-width: 768px) {
+  .event .content {
+      width: 100%;
+      float: none;
+      margin: 0 auto 20px auto;
+  }
+  
+  .event .dot {
+      left: 50%;
+  }
+}
+
 #about {
   position: relative;
 }
@@ -307,6 +413,16 @@ section {
   justify-content: center;
   flex-direction: column;
 }
+
+.about-details-container h3 {
+  color: rgb(0, 0, 0);
+}
+
+.about-details-container p {
+  color: black;
+}
+
+
 
 .about-containers,
 .about-details-container {
@@ -361,6 +477,10 @@ section {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.experience-details-container h3 {
+  color:#000000
 }
 
 .article-container {
@@ -442,6 +562,14 @@ article .icon {
   font-size: larger;
 }
 
+.contact-info-container a {
+  color:#ffffff
+}
+
+.light-mode .contact-info-container a {
+  color: black
+}
+
 .contact-icon {
   cursor: default;
 }
@@ -459,4 +587,5 @@ footer {
 
 footer p {
   text-align: center;
+  color: #ffffff;
 }
