@@ -1,0 +1,15 @@
+{
+    "name": "Personal Portfolio",
+    "description": "Simple content",
+    "scripts": {},
+    "env": {},
+    "formation": {},
+    "addons": [],
+    
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-static.git"
+      }
+    ]
+  }
+  
