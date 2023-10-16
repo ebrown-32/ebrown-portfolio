@@ -1,0 +1,10 @@
+{
+    "name": "Portfolio",
+    "description": "Personal",
+    "buildpacks": [
+      {
+        "url": "https://github.com/heroku/heroku-buildpack-static.git"
+      }
+    ]
+  }
+  
