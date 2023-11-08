@@ -130,8 +130,8 @@
   }
 
   .section__profile-pic-container {
-    width: auto;
-    height: 46vw;
+    width: 400px;
+    height: 400px;
     justify-content: center;
   }
 
