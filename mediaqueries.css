@@ -142,6 +142,7 @@
   .title {
     font-size: 2rem;
     opacity: 1;
+    transform: translateX(0);
   }
   .text-container {
     text-align: justify;
