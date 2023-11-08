@@ -12,7 +12,7 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   #desktop-nav {
     display: none;
   }
@@ -42,6 +42,19 @@
     height: 275px;
     margin: 0 auto 2rem;
   }
+
+  .section__pic-container {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
+
+  .section__pic-container_right {
+    width: 0px;
+    height: 30px;
+    visibility: hidden;
+  }
+
   .about-containers {
     margin-top: 0;
   }
@@ -56,13 +69,27 @@
     height: 83vh;
     margin-bottom: 0;
   }
+
+  #about {
+    padding-top: 30%;
+  }
+  
   article {
     font-size: 1rem;
   }
   footer nav {
     height: fit-content;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
+
+  .section__text{
+    padding-top:55%;
+  }
+
+  .about-containers {
+    padding-top: 5%;
+  }
+
   .about-containers,
   .contact-info-upper-container,
   .btn-container {
@@ -70,6 +97,7 @@
   }
   .contact-info-container {
     margin: 0;
+    font-size: .5rem;
   }
   .contact-info-container p,
   .nav-links li a {
@@ -82,18 +110,34 @@
     font-size: 1.5rem;
   }
   .nav-links {
+    visibility: collapse;
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
   }
+
   .section__pic-container {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
+
+  .section__pic-container_right {
+    width: 0px;
+    height: 30px;
+    visibility: hidden;
+  }
+
+  .section__profile-pic-container {
     width: auto;
     height: 46vw;
     justify-content: center;
   }
+
   .section__text__p2 {
     font-size: 1.25rem;
   }
+  
   .title {
     font-size: 2rem;
   }
